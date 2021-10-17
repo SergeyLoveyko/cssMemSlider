@@ -173,6 +173,7 @@ label, a {
 .footer {
     display: flex;
     justify-content: space-between;
+    margin-top: 4%;
 }
 
 #text__box {
@@ -245,3 +246,71 @@ label, a {
 /* --------------------------------------------------------------------- */
 /* ----------------------------- MEDIA --------------------------------- */
 /* --------------------------------------------------------------------- */
+
+
+@media (max-width: 568px) {
+
+    .main {
+        margin: 0 auto;
+        width: 20rem;
+        height: 65.5rem;
+        padding: 20px 15px 0 15px;
+    }
+
+    #slides article {
+        width: 200%;
+    }
+
+    #slides .image {
+        /* width: 17.5rem; */
+        width: 50%;
+    }
+
+    #slides img {
+        width: 18.15rem;
+    }
+
+    .footer {
+        display: block;
+    }
+
+    #active {
+        width: 100%;
+        text-align: center;
+        margin-top: -89px;
+    }
+
+    #active label {
+        width: 0.6rem;
+         height: 0.6rem;
+    }
+
+    #text__box {
+        margin-top: 20px;
+    }
+
+    #text__box span {
+        font-size: 15px;
+        font-weight: normal;
+        line-height: 30px;
+        letter-spacing: 1px;
+        margin-left: 5px;
+    }
+
+    #switch1:checked ~ .footer #active label:nth-child(1),
+    #switch2:checked ~ .footer #active label:nth-child(2),
+    #switch3:checked ~ .footer #active label:nth-child(3),
+    #switch4:checked ~ .footer #active label:nth-child(4),
+    #switch5:checked ~ .footer #active label:nth-child(5),
+    #switch6:checked ~ .footer #active label:nth-child(6),
+    #switch7:checked ~ .footer #active label:nth-child(7) {
+        border: 2px solid;
+        background-color: #25282a !important;
+        border-color: #71abfe;
+        transition: 0.3s;
+    }
+
+    .image-7 {
+        height: 100%;
+    }
+}
