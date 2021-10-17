@@ -1,0 +1,316 @@
+/* Обнуление */
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+}
+ul,
+ol,
+li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+
+/* ----------------------------------------- */
+
+.main {
+    width: 100%;
+    height: 67rem;
+    padding: 60px 50px 0 50px;
+    background-color: #25282a;
+}
+
+#slider {   /*Центровка слайдера*/
+    /* position: relative; */
+    margin: 0 auto;
+    text-align: center;
+}
+
+#slides article {   /*Изображения справа друг от друга*/
+    width: 200%;
+    float: left;
+}
+
+#slides .image {    /*Устанавливаем обхий размер блока с изображиниями*/
+    display: flex;
+    width: 50%;
+    line-height: 0;
+}
+
+#overflow {     /*Скрывает всё что не помещается в сам контейнер*/
+    width: 100%;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+article img {
+    /* width: 100%; */
+    height: 100%;
+}
+
+#desctop:checked ~ #slider {
+    /* max-width: 1366px; */
+    max-width: 85rem;
+}
+
+label, a {
+    cursor: pointer;
+}
+
+.main input {
+    display: none;
+}
+
+#switch1:checked ~ #slides .image {
+    margin-left: 0;
+}
+
+#switch2:checked ~ #slides .image {
+    margin-left: -100%;
+}
+
+#switch3:checked ~ #slides .image {
+    margin-left: -200%;
+}
+
+#switch4:checked ~ #slides .image {
+    margin-left: -300%;
+}
+
+#switch5:checked ~ #slides .image {
+    margin-left: -400%;
+}
+
+#switch6:checked ~ #slides .image {
+    margin-left: -500%;
+}
+
+#switch7:checked ~ #slides .image {
+    margin-left: -600%;
+}
+
+#controls {     /*Положение блока всех управляющих элементов*/
+    margin: 0 0 0 0;
+    width: 100%;
+    height: 50px;
+}
+
+#active label {     /*Стиль отдельного переключателя*/
+    border-radius: 10px;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    /* background: #bbb; */
+    border-color: #71abfe;
+    background-color: #71abfe;
+    transition: 0.3s;
+
+}
+
+#active label:not(:last-child) {
+    margin-right: 10px;
+}
+
+#active {   /*Распольжение блока с переключателями*/
+    /* position: relative; */
+    width: 30%;
+    margin: 0.5% 0 0 0;
+    text-align: right;
+    z-index: 5;
+}
+    
+#switch1:checked ~ .footer #active label:nth-child(1),
+#switch2:checked ~ .footer #active label:nth-child(2),
+#switch3:checked ~ .footer #active label:nth-child(3),
+#switch4:checked ~ .footer #active label:nth-child(4),
+#switch5:checked ~ .footer #active label:nth-child(5),
+#switch6:checked ~ .footer #active label:nth-child(6),
+#switch7:checked ~ .footer #active label:nth-child(7) {
+    border: 3px solid;
+    background-color: #25282a !important;
+    border-color: #71abfe;
+    transition: 0.3s;
+}
+
+.footer #active label:hover {
+    border: 3px solid;
+    border-color: white !important;
+    background-color: white;
+    transition: 0.3s;
+}
+
+.footer #active label:active {
+    border: 3px solid;
+    border-color: yellow !important;
+    background-color: yellow;
+    /* transition: 0.3s; */
+}
+
+#slides .image {    /*Фнимация пролистывания изображения*/
+    transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4%;
+}
+
+#text__box {
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+}
+
+#text__box span {
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 30px;
+    letter-spacing: 4px;
+    margin-left: 5px;
+    color: white;
+}
+
+#text__box .texts {
+    display: flex;
+    width: 100%;
+    
+    line-height: 0;
+}
+
+#text__box .text {
+    min-width: 100%;
+    text-align: left;
+}
+
+#text__box .text div {
+    width: 200%;
+    float: left;
+}
+
+
+#switch1:checked ~ .footer #text__box .texts {
+    margin-left: 0;
+}
+
+#switch2:checked ~ .footer #text__box .texts {
+    margin-left: -100%;
+}
+
+#switch3:checked ~ .footer #text__box .texts {
+    margin-left: -200%;
+}
+
+#switch4:checked ~ .footer #text__box .texts {
+    margin-left: -300%;
+}
+
+#switch5:checked ~ .footer #text__box .texts {
+    margin-left: -400%;
+}
+
+#switch6:checked ~ .footer #text__box .texts {
+    margin-left: -500%;
+}
+
+#switch7:checked ~ .footer #text__box .texts {
+    margin-left: -600%;
+}
+
+#text__box .texts {    /*Фнимация пролистывания изображения*/
+    transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+
+
+/* --------------------------------------------------------------------- */
+/* ----------------------------- MEDIA --------------------------------- */
+/* --------------------------------------------------------------------- */
+
+
+@media (max-width: 568px) {
+
+    .main {
+        margin: 0 auto;
+        width: 20rem;
+        height: 65.5rem;
+        padding: 20px 15px 0 15px;
+    }
+
+    #slides article {
+        width: 200%;
+    }
+
+    #slides .image {
+        /* width: 17.5rem; */
+        width: 50%;
+    }
+
+    #slides img {
+        width: 18.15rem;
+    }
+
+    .footer {
+        display: block;
+    }
+
+    #active {
+        width: 100%;
+        text-align: center;
+        margin-top: -89px;
+    }
+
+    #active label {
+        width: 0.6rem;
+         height: 0.6rem;
+    }
+
+    #text__box {
+        margin-top: 20px;
+    }
+
+    #text__box span {
+        font-size: 15px;
+        font-weight: normal;
+        line-height: 30px;
+        letter-spacing: 1px;
+        margin-left: 5px;
+    }
+
+    #switch1:checked ~ .footer #active label:nth-child(1),
+    #switch2:checked ~ .footer #active label:nth-child(2),
+    #switch3:checked ~ .footer #active label:nth-child(3),
+    #switch4:checked ~ .footer #active label:nth-child(4),
+    #switch5:checked ~ .footer #active label:nth-child(5),
+    #switch6:checked ~ .footer #active label:nth-child(6),
+    #switch7:checked ~ .footer #active label:nth-child(7) {
+        border: 2px solid;
+        background-color: #25282a !important;
+        border-color: #71abfe;
+        transition: 0.3s;
+    }
+
+    .image-7 {
+        height: 100%;
+    }
+}
